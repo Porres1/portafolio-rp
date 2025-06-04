@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Rodrigo Porres - Estratega en Comunicación & IA Generativa</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" /> <!-- SwiperJS CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body class="bg-gray-100 text-gray-800">
+    <!-- Floating particles -->
+    <div class="floating-particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <!-- Menú de Navegación Fijo -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-opacity-50 backdrop-blur-md">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#inicio" class="flex items-center text-white font-bold text-xl">
+                        <img src="https://iili.io/FJoMRZF.png" alt="Logo Rodrigo Porres" class="h-10 mr-3"> <!-- Ajusta la altura según sea necesario -->
+                        <span class="hidden md:block">Rodrigo Porres</span> <!-- Ocultar en móvil si el logo es suficiente -->
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#inicio" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Inicio</a>
+                        <a href="#sobre-mi" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Sobre mí</a>
+                        <a href="#experiencia" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Experiencia</a>
+                        <a href="#habilidades" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Habilidades & Conocimientos</a>
+                        <a href="#certificados" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Certificados</a>
+                        <a href="#portafolio" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Portafolio</a>
+                        <a href="#servicios" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Servicios</a>
+                        <a href="#contacto" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contacto</a>
+                    </div>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <!-- Botón de menú móvil -->
+                    <button type="button" id="mobile-menu-button" class="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Abrir menú principal</span>
+                        <!-- Heroicon name: outline/menu -->
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <!-- Heroicon name: outline/x -->
+                        <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Panel de menú móvil, se muestra/oculta basado en el estado del menú. -->
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#inicio" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Inicio</a>
+                <a href="#sobre-mi" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Sobre mí</a>
+                <a href="#experiencia" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Experiencia</a>
+                <a href="#habilidades" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Habilidades & Conocimientos</a>
+                <a href="#certificados" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Certificados</a>
+                <a href="#portafolio" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Portafolio</a>
+                <a href="#servicios" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Servicios</a>
+                <a href="#contacto" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección Hero -->
+    <section id="inicio" class="min-h-screen flex flex-col justify-center items-center relative overflow-hidden" style="background-image: url('https://iili.io/FJUIad7.png'); background-size: cover; background-position: center;">
+        <!-- Fondo animado opcional (particles.js o un SVG con movimiento sutil) -->
+        <canvas id="particles-background" class="absolute inset-0"></canvas>
+        <div class="relative z-10 text-center text-white px-4" data-aos="zoom-in">
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-4" data-aos="fade-up" data-aos-delay="0">Rodrigo Porres</h1>
+            <p class="text-xl md:text-2xl mb-6" data-aos="fade-up" data-aos-delay="500">Estratega en Comunicación & IA Generativa</p>
+            <div class="space-x-0 md:space-x-4 space-y-4 md:space-y-0 flex flex-col md:flex-row items-center justify-center">
+                <a href="#portafolio" class="btn-primary" data-aos="zoom-in" data-aos-delay="1000">Ver Portafolio</a>
+                <a href="https://drive.google.com/file/d/1ikbULnvjtok5SXSGPEryIS1expF0txm5/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-outline" data-aos="zoom-in" data-aos-delay="1200">Descargar CV</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Sobre Mí -->
+    <section id="sobre-mi" class="min-h-screen flex flex-col justify-center py-16 md:py-20 bg-white">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-8 md:mb-0 flex justify-center" data-aos="fade-right" data-aos-delay="0">
+                <!-- La imagen se añadirá a /assets/img/rodri-foto.jpg -->
+                <img src="https://iili.io/FJ4hB14.jpg" alt="Foto Rodrigo Porres" class="w-48 h-48 md:w-64 md:h-64 rounded-full object-cover mx-auto md:mx-0 shadow-lg" data-aos="zoom-in" data-aos-delay="200">
+            </div>
+            <div class="md:w-1/2 md:pl-12 text-center md:text-left" data-aos="fade-left" data-aos-delay="300">
+                <h2 class="text-3xl section-title mb-4">Sobre mí</h2>
+                <p class="text-lg mb-4">
+                    Autodidacta en comunicación y marketing digital con más de 5 años de experiencia, logrando resultados como +120 % en prospección de leads y reduciendo 40 % el tiempo de publicación.  
+                    Coordino proyectos digitales en Prensa Comunitaria, fusionando storytelling, datos y tecnología para generar impacto real.
+                </p>
+                <blockquote class="italic border-l-4 border-blue-500 pl-4 py-2 text-gray-600 text-left mx-auto md:mx-0 max-w-md">
+                    “Estar bien es enemigo de estar mejor.”
+                </blockquote>
+                <div class="mt-8 text-center md:text-left">
+                    <a href="https://drive.google.com/file/d/1ikbULnvjtok5SXSGPEryIS1expF0txm5/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full inline-flex items-center transition duration-300 ease-in-out transform hover:scale-105 shadow-lg">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                        Descargar CV
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Experiencia -->
+    <section id="experiencia" class="min-h-screen flex flex-col justify-center py-16 md:py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl section-title text-center mb-12" data-aos="fade-up">Experiencia</h2>
+            <div class="relative wrap overflow-hidden p-2 md:p-10 h-full">
+                <!-- Línea central vertical -->
+                <div class="border-2-2 absolute border-opacity-20 border-blue-400 h-full border" style="left: 50%; transform: translateX(-50%);"></div>
+                
+                    <!-- Item de Experiencia 1 (Izquierda) -->
+                    <div class="mb-8 flex justify-between items-center w-full right-timeline">
+                        <div class="order-1 w-5/12"></div>
+                        <div class="z-20 flex items-center order-1 bg-blue-500 shadow-xl w-8 h-8 rounded-full">
+                            <h1 class="mx-auto font-semibold text-lg text-white">1</h1>
+                        </div>
+                        <div class="order-1 bg-blue-100 rounded-lg shadow-xl w-5/12 px-6 py-4 text-right timeline-event-container" data-aos="fade-left">
+                            <h3 class="mb-1 font-semibold text-xl text-blue-700 cursor-pointer timeline-title">Especialista en Innovación Digital e IA</h3>
+                            <p class="mb-2 text-sm text-gray-500">Prensa Comunitaria (Proyecto OJED) | 2025 – Actualidad</p>
+                            <div class="timeline-details hidden mt-2 text-gray-700 text-sm text-left ml-auto mr-0 w-fit">
+                                <ul class="list-disc list-inside">
+                                    <li>Diseño y optimización del sitio OJED en WordPress, incrementando el tráfico en un 40 %.</li>
+                                    <li>Desarrollo de automatizaciones con ChatGPT y Gemini, reduciendo en un 40 % el tiempo de publicación de noticias y reportes.</li>
+                                    <li>Análisis de reputación en línea con Meltwater y Brandwatch para respaldar investigaciones OSINT.</li>
+                                    <li>Creación de apps sencillas internas para gestión de contenido y coordinación de equipos.</li>
+                                    <li>Diseño de guiones y narrativas digitales para campañas de justicia social; capacitación al equipo en herramientas de IA y comunicación digital.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item de Experiencia 2 (Derecha) -->
+                    <div class="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline">
+                        <div class="order-1 w-5/12"></div>
+                        <div class="z-20 flex items-center order-1 bg-blue-500 shadow-xl w-8 h-8 rounded-full">
+                            <h1 class="mx-auto text-white font-semibold text-lg">2</h1>
+                        </div>
+                        <div class="order-1 bg-gray-100 rounded-lg shadow-xl w-5/12 px-6 py-4 text-left timeline-event-container" data-aos="fade-right">
+                            <h3 class="mb-1 font-semibold text-xl text-gray-800 cursor-pointer timeline-title">Gerente de Ventas</h3>
+                            <p class="mb-2 text-sm text-gray-500">Corporación Amadeus | 2023 – 2024</p>
+                            <div class="timeline-details hidden mt-2 text-gray-700 text-sm">
+                                <ul class="list-disc list-inside">
+                                    <li>Lideré un equipo que alcanzó un récord histórico: +120 % de prospección de leads y 20 lotes vendidos/mes.</li>
+                                    <li>Implementé campañas de influencer marketing (de 1 k a 50 k seguidores), consiguiendo un 25 % más de prospectos cualificados.</li>
+                                    <li>Optimizé el CRM y los procesos de venta, reduciendo el ciclo en un 30 % y posicionando al equipo como el número 1 de la empresa.</li>
+                                    <li>Desarrollé campañas en Meta Ads y Google Ads y organicé eventos promocionales que aumentaron el reconocimiento de marca en un 35 %.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item de Experiencia 3 (Izquierda) -->
+                    <div class="mb-8 flex justify-between items-center w-full right-timeline">
+                        <div class="order-1 w-5/12"></div>
+                        <div class="z-20 flex items-center order-1 bg-blue-500 shadow-xl w-8 h-8 rounded-full">
+                            <h1 class="mx-auto font-semibold text-lg text-white">3</h1>
+                        </div>
+                        <div class="order-1 bg-blue-100 rounded-lg shadow-xl w-5/12 px-6 py-4 text-right timeline-event-container" data-aos="fade-left">
+                            <h3 class="mb-1 font-semibold text-xl text-blue-700 cursor-pointer timeline-title">Comunicador</h3>
+                            <p class="mb-2 text-sm text-gray-500">IEPADES | 2022 – 2023</p>
+                            <div class="timeline-details hidden mt-2 text-gray-700 text-sm text-left ml-auto mr-0 w-fit">
+                                <ul class="list-disc list-inside">
+                                    <li>Alineé la identidad visual de la ONG y gestioné la difusión de contenido en sitio web y redes, aumentando el tráfico web en un 40 %.</li>
+                                    <li>Coordiné eventos, charlas y recaudaciones, incrementando la asistencia en un 25 %.</li>
+                                    <li>Actué como vocero en foros multisectoriales, fortaleciendo alianzas con medios y organizaciones asociadas.</li>
+                                    <li>Produje videos e infografías de alto impacto con Canva, Photoshop y Premiere, garantizando coherencia en la comunicación.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item de Experiencia 4 (Derecha) -->
+                    <div class="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline">
+                        <div class="order-1 w-5/12"></div>
+                        <div class="z-20 flex items-center order-1 bg-blue-500 shadow-xl w-8 h-8 rounded-full">
+                            <h1 class="mx-auto text-white font-semibold text-lg">4</h1>
+                        </div>
+                        <div class="order-1 bg-gray-100 rounded-lg shadow-xl w-5/12 px-6 py-4 text-left timeline-event-container" data-aos="fade-right">
+                            <h3 class="mb-1 font-semibold text-xl text-gray-800 cursor-pointer timeline-title">Asesor de Comunicación y Estrategia</h3>
+                            <p class="mb-2 text-sm text-gray-500">(ONGs & Sociedad Civil) | 2021 – 2022</p>
+                            <div class="timeline-details hidden mt-2 text-gray-700 text-sm">
+                                <p class="font-semibold">Organizaciones: AMMI, CITRADOMZA, Fundación Mirna Mack, Diakonía, Fuerza Ciudadana, IEPADES</p> 
+                                <ul class="list-disc list-inside mt-1">
+                                    <li>Potencié la visibilidad institucional de diversas organizaciones en un 50 % mediante diseños de materiales promocionales y coordinación de campañas.</li>
+                                    <li>Brindé consultorías estratégicas en comunicación, fortalecimiento institucional y marketing para proyectos de justicia social.</li>
+                                    <li>Implementé mejoras en procesos de comunicación, reduciendo tiempos de producción en un 30 % y asegurando coherencia con valores organizacionales.</li>
+                                    <li>Gestioné mesas de diálogo, diseñé guiones para campañas de “Conciencia Ciudadana” y lideré estrategias de community management que alcanzaron a más de 1 000 000 de usuarios en Facebook.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+            </div>
+        </div>
+    </section>
+
+            <!-- Sección Habilidades & Conocimientos -->
+            <section id="habilidades" class="min-h-screen flex flex-col justify-center items-center bg-gray-50 py-16 px-4 md:px-8">
+                <div class="container mx-auto text-center">
+                    <h2 class="text-4xl section-title mb-12" data-aos="fade-down">Habilidades & Conocimientos</h2>
+                    
+                    <div class="grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-8 text-left">
+
+                        <!-- Desarrollo Web & Tecnología -->
+                        <div class="bg-white p-6 rounded-lg shadow-lg" data-aos="fade-up">
+                            <h3 class="text-2xl font-semibold mb-4 text-blue-600">Desarrollo Web & Tecnología</h3>
+                            <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-center"><i class="fas fa-code mr-2 text-blue-500"></i>HTML, CSS, JavaScript</li>
+                                <li class="flex items-center"><i class="fab fa-wordpress-simple mr-2 text-blue-500"></i>WordPress (Elementor)</li>
+                                <li class="flex items-center"><i class="fas fa-cogs mr-2 text-blue-500"></i>Creación de apps sencillas y automatizaciones básicas</li>
+                                <li class="flex items-center"><i class="fas fa-brain mr-2 text-blue-500"></i>Herramientas de IA: ChatGPT (GPT), 11Labs, Gemini, Pinokio</li>
+                            </ul>
+                        </div>
+
+                        <!-- Marketing Digital & Analítica -->
+                        <div class="bg-white p-6 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                            <h3 class="text-2xl font-semibold mb-4 text-blue-600">Marketing Digital & Analítica</h3>
+                            <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-center"><i class="fas fa-bullhorn mr-2 text-blue-500"></i>Meta Ads (Facebook/Instagram), Google Ads, SEO on-page</li>
+                                <li class="flex items-center"><i class="fas fa-chart-line mr-2 text-blue-500"></i>CRM: HubSpot, Salesforce</li>
+                                <li class="flex items-center"><i class="fas fa-search-dollar mr-2 text-blue-500"></i>Monitorización y análisis de datos con Meltwater, Brandwatch</li>
+                                <li class="flex items-center"><i class="fas fa-user-secret mr-2 text-blue-500"></i>Técnicas OSINT (Google Dorks, Shodan)</li>
+                            </ul>
+                        </div>
+
+                        <!-- Diseño & Comunicación -->
+                        <div class="bg-white p-6 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                            <h3 class="text-2xl font-semibold mb-4 text-blue-600">Diseño & Comunicación</h3>
+                            <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-center"><i class="fas fa-palette mr-2 text-blue-500"></i>Adobe Premiere, Photoshop, Illustrator, Character Animator</li>
+                                <li class="flex items-center"><i class="fas fa-lightbulb mr-2 text-blue-500"></i>Desarrollo de branding: logo, identidad gráfica, psicología de la imagen</li>
+                                <li class="flex items-center"><i class="fas fa-users mr-2 text-blue-500"></i>Community Management y construcción de comunidades online</li>
+                                <li class="flex items-center"><i class="fas fa-film mr-2 text-blue-500"></i>Storytelling, redacción de guiones y spots de radio/TV</li>
+                                <li class="flex items-center"><i class="fas fa-microphone-alt mr-2 text-blue-500"></i>Técnicas de oratoria, manejo de crisis y planeación estratégica</li>
+                            </ul>
+                        </div>
+
+                        <!-- Gestión de Proyectos & Servicios -->
+                        <div class="bg-white p-6 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="300">
+                            <h3 class="text-2xl font-semibold mb-4 text-blue-600">Gestión de Proyectos & Servicios</h3>
+                            <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-center"><i class="fas fa-tasks mr-2 text-blue-500"></i>Planificación y coordinación de eventos y campañas</li>
+                                <li class="flex items-center"><i class="fas fa-rocket mr-2 text-blue-500"></i>Optimización de procesos de comunicación (−30 % tiempo de producción)</li>
+                                <li class="flex items-center"><i class="fas fa-chalkboard-teacher mr-2 text-blue-500"></i>Formación en IA aplicada y marketing digital</li>
+                                <li class="flex items-center"><i class="fas fa-desktop mr-2 text-blue-500"></i>Diseño web responsivo y mantenimiento de sitios profesionales</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Certificados -->
+            <section id="certificados" class="min-h-screen flex flex-col justify-center items-center bg-white py-16 px-4 md:px-8">
+                <div class="container mx-auto text-center">
+                    <h2 class="text-4xl section-title mb-12" data-aos="fade-down">Certificados</h2>
+                    <!-- Contenedor del carrusel Swiper -->
+                    <div class="swiper-container certificates-slider overflow-hidden" data-aos="fade-up">
+                        <div class="swiper-wrapper">
+                            <!-- Slides de Certificados -->
+                            <div class="swiper-slide"><img src="https://iili.io/FJol4OF.png" alt="Certificado PSEA" class="rounded-lg shadow-lg"></div>
+                            <div class="swiper-slide"><img src="https://iili.io/FJolrR1.png" alt="Certificado Etica UNICEF" class="rounded-lg shadow-lg"></div>
+                            <div class="swiper-slide"><img src="https://iili.io/FJolsWJ.png" alt="Diploma" class="rounded-lg shadow-lg"></div>
+                            <div class="swiper-slide"><img src="https://iili.io/FJolixa.png" alt="Certificado Marketing Digital Google" class="rounded-lg shadow-lg"></div>
+                            <div class="swiper-slide"><img src="https://iili.io/FJolyOX.png" alt="Certificado Digitaliza tu Negocio Google" class="rounded-lg shadow-lg"></div>
+                            <div class="swiper-slide"><img src="https://iili.io/FJolZfR.png" alt="Certificado Competencias Digitales Google" class="rounded-lg shadow-lg"></div>
+                            <div class="swiper-slide"><img src="https://iili.io/FJoltlp.png" alt="Certificado Adicional 1" class="rounded-lg shadow-lg"></div>
+                            <div class="swiper-slide"><img src="https://iili.io/FJolmJI.png" alt="Certificado Adicional 2" class="rounded-lg shadow-lg"></div>
+                            <div class="swiper-slide"><img src="https://iili.io/FJo09bn.png" alt="Certificado Adicional 3" class="rounded-lg shadow-lg"></div>
+                            <div class="swiper-slide"><img src="https://iili.io/FJo02sf.png" alt="Certificado Adicional 4" class="rounded-lg shadow-lg"></div>
+                            <div class="swiper-slide"><img src="https://iili.io/FJo0dWG.png" alt="Certificado Adicional 5" class="rounded-lg shadow-lg"></div>
+                            <div class="swiper-slide"><img src="https://iili.io/FJo0K0l.png" alt="Certificado Adicional 6" class="rounded-lg shadow-lg"></div>
+                        </div>
+                        <!-- Add Pagination -->
+                        <div class="swiper-pagination"></div>
+                        <!-- Add Navigation -->
+                        <div class="swiper-button-next text-blue-500"></div>
+                        <div class="swiper-button-prev text-blue-500"></div>
+                    </div>
+                </div>
+            </section>
+
+    <!-- Sección Portafolio -->
+    <section id="portafolio" class="min-h-screen flex flex-col justify-center items-center py-16 md:py-20 bg-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl section-title mb-12" data-aos="fade-up">Proyectos</h2>
+            <p class="text-lg mb-8" data-aos="fade-up" data-aos-delay="100">Explora una selección de mis proyectos y diseños. ¡Haz clic en las imágenes para visitar los proyectos!</p>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8" data-aos="fade-up" data-aos-delay="200">
+                <!-- Proyecto 1 -->
+                <a href="https://prensacomunitaria.org/oyeb-relatos-del-tiempo-en-cinco-colores/" target="_blank" rel="noopener noreferrer" class="portfolio-item group relative overflow-hidden rounded-lg shadow-lg block" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 1rem;">
+                    <img src="https://iili.io/FJ48smQ.png" alt="Proyecto 1" class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110 rounded-lg">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <p class="text-white text-lg font-semibold">Visitar Proyecto 1</p>
+                    </div>
+                </a>
+                <!-- Proyecto 2 -->
+                <a href="https://lighthearted-hamster-acce91.netlify.app/" target="_blank" rel="noopener noreferrer" class="portfolio-item group relative overflow-hidden rounded-lg shadow-lg block" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); padding: 1rem;">
+                    <img src="https://iili.io/FJ4OGcv.png" alt="Proyecto 2" class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110 rounded-lg">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <p class="text-white text-lg font-semibold">Visitar Proyecto 2</p>
+                    </div>
+                </a>
+                <!-- Proyecto 3 -->
+                <a href="https://scintillating-empanada-0f0881.netlify.app/" target="_blank" rel="noopener noreferrer" class="portfolio-item group relative overflow-hidden rounded-lg shadow-lg block" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); padding: 1rem;">
+                    <img src="https://iili.io/FJor81R.png" alt="Proyecto 3" class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110 rounded-lg">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <p class="text-white text-lg font-semibold">Visitar Proyecto 3</p>
+                    </div>
+                </a>
+                <!-- Proyecto 4 -->
+                <a href="https://animated-trifle-afc709.netlify.app/" target="_blank" rel="noopener noreferrer" class="portfolio-item group relative overflow-hidden rounded-lg shadow-lg block" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); padding: 1rem;">
+                    <img src="https://iili.io/FJorSgp.png" alt="Proyecto 4" class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110 rounded-lg">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <p class="text-white text-lg font-semibold">Visitar Proyecto 4</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Servicios -->
+    <section id="servicios" class="min-h-screen flex flex-col justify-center py-16 md:py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl section-title text-center mb-12" data-aos="fade-up">Servicios</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <!-- Servicio 1 -->
+                <div class="card text-center p-6" data-aos="zoom-in">
+                    <div class="mb-4 floating">
+                        <i class="fas fa-robot text-4xl service-icon" style="color: var(--accent-color);"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Consultoría en IA Generativa</h3>
+                    <p class="text-sm">Optimización de procesos internos y generación de contenido automático usando ChatGPT, Gemini o 11Labs. Definición de flujos de trabajo con IA para automatización de tareas repetitivas (publicaciones, análisis de datos, resúmenes, etc.).</p>
+                </div>
+                <!-- Servicio 2 -->
+                <div class="card text-center p-6" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="mb-4 floating-slow">
+                        <i class="fas fa-bullhorn text-4xl service-icon" style="color: var(--accent-color);"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Estrategias de Comunicación Digital & Storytelling</h3>
+                    <p class="text-sm">Desarrollo de planes de comunicación a medida: desde campañas de concienciación social hasta lanzamientos comerciales. Creación de guiones y narrativas impactantes para redes, video y eventos, adaptadas a tu audiencia.</p>
+                </div>
+                <!-- Servicio 3 -->
+                <div class="card text-center p-6" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="mb-4 floating">
+                        <i class="fas fa-code text-4xl service-icon" style="color: var(--accent-color);"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Desarrollo Web & Automatización</h3>
+                    <p class="text-sm">Diseño y construcción de sitios web responsivos (WordPress/Elementor, HTML/CSS, JavaScript) con enfoque en UX/UI. Automatización de tareas con integraciones (APIs, bots de scraping, formularios inteligentes) para ahorrar tiempo y recursos.</p>
+                </div>
+                <!-- Servicio 4 -->
+                <div class="card text-center p-6" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="mb-4 floating-slow">
+                        <i class="fas fa-users text-4xl service-icon" style="color: var(--accent-color);"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Community Management & Gestión de Talento Digital</h3>
+                    <p class="text-sm">Creación, moderación y crecimiento de comunidades online (Facebook, Instagram, TikTok, LinkedIn). Estrategias de engagement que convierten seguidores en clientes o aliados.</p>
+                </div>
+                <!-- Servicio 5 -->
+                <div class="card text-center p-6" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="mb-4 floating">
+                        <i class="fas fa-chart-line text-4xl service-icon" style="color: var(--accent-color);"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Análisis de Datos & Monitoreo de Reputación</h3>
+                    <p class="text-sm">Configuración y uso avanzado de Meltwater y Brandwatch para "escuchar" medios y redes, detectar tendencias y gestionar crisis. Reportes OSINT (Shodan, Google Dorks) para respaldar investigaciones, due diligence o estudios de mercado.</p>
+                </div>
+                <!-- Servicio 6 -->
+                <div class="card text-center p-6" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="mb-4 floating-slow">
+                        <i class="fas fa-paint-brush text-4xl service-icon" style="color: var(--accent-color);"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Diseño Gráfico, Branding & Producción Audiovisual</h3>
+                    <p class="text-sm">Creación de identidades visuales completas: logos, paletas de color, manual de marca, papelería corporativa. Diseño de piezas gráficas y producción de videos (Canva, Photoshop, Illustrator, Premiere, Character Animator) para campañas online y offline.</p>
+                </div>
+                <!-- Servicio 7 -->
+                <div class="card text-center p-6" data-aos="zoom-in" data-aos-delay="600">
+                    <div class="mb-4 floating">
+                        <i class="fas fa-graduation-cap text-4xl service-icon" style="color: var(--accent-color);"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Formación & Workshops en IA y Marketing Digital</h3>
+                    <p class="text-sm">Cursos prácticos de "Cómo integrar IA en tu negocio" (prompt engineering, automatizaciones, uso de APIs). Talleres de marketing digital (Meta Ads, Google Ads, SEO básico) y community management para equipos.</p>
+                </div>
+                <!-- Servicio 8 -->
+                <div class="card text-center p-6" data-aos="zoom-in" data-aos-delay="700">
+                    <div class="mb-4 floating-slow">
+                        <i class="fas fa-handshake text-4xl service-icon" style="color: var(--accent-color);"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Consultoría en Marketing de Productos & Estrategia de Ventas</h3>
+                    <p class="text-sm">Validación de modelos de negocio y definición de propuestas de valor. Creación de funnels de venta, segmentación de audiencias y optimización de embudos (desde lead magnets hasta cierre de venta).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Contacto -->
+    <section id="contacto" class="min-h-screen flex flex-col justify-center items-center py-16 md:py-20 bg-gray-50">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl section-title mb-4 text-gray-800" data-aos="fade-down">Contacto</h2>
+            <p class="text-xl mb-12 text-gray-600" data-aos="fade-up" data-aos-delay="100">¿Tienes un proyecto en mente? ¡Hablemos!</p>
+            
+            <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <!-- Información de Contacto -->
+                <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-200" data-aos="fade-right" data-aos-delay="200">
+                    <h3 class="text-2xl font-semibold mb-6 text-gray-800">Información de Contacto</h3>
+                    <div class="space-y-6 text-left">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                                <i class="fas fa-envelope text-blue-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-500 text-sm font-medium">Email</p>
+                                <p class="text-gray-800 font-semibold">rodrigoporres@protonmail.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                                <i class="fab fa-whatsapp text-green-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-500 text-sm font-medium">WhatsApp</p>
+                                <p class="text-gray-800 font-semibold">+502 3361 7016</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
+                                <i class="fas fa-map-marker-alt text-purple-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-500 text-sm font-medium">Ubicación</p>
+                                <p class="text-gray-800 font-semibold">Guatemala, Guatemala</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Redes Sociales -->
+                    <div class="mt-8 pt-6 border-t border-gray-200">
+                        <h4 class="text-lg font-semibold mb-4 text-gray-800">Sígueme en:</h4>
+                        <div class="flex justify-center space-x-4">
+                            <a href="https://www.linkedin.com/in/rodrigo-porres-946b171ba" class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-all duration-300 transform hover:scale-110" target="_blank">
+                                <i class="fab fa-linkedin-in text-white text-xl"></i>
+                            </a>
+                            <a href="https://wa.me/message/TKYUXNEMAKK4A1" class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center hover:bg-green-600 transition-all duration-300 transform hover:scale-110" target="_blank">
+                                <i class="fab fa-whatsapp text-white text-xl"></i>
+                            </a>
+                            <a href="https://github.com/Porres1" class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-900 transition-all duration-300 transform hover:scale-110" target="_blank">
+                                <i class="fab fa-github text-white text-xl"></i>
+                            </a>
+                            <a href="mailto:rodrigoporres@protonmail.com" class="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center hover:bg-red-600 transition-all duration-300 transform hover:scale-110">
+                                <i class="fas fa-envelope text-white text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Formulario de Contacto -->
+                <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-200" data-aos="fade-left" data-aos-delay="300">
+                    <h3 class="text-2xl font-semibold mb-6 text-gray-800">Envíame un Mensaje</h3>
+                    <form id="contact-form" class="space-y-4">
+                        <div>
+                            <input type="text" id="form-name" name="name" placeholder="Tu Nombre" class="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300" required>
+                        </div>
+                        <div>
+                            <input type="email" id="form-email" name="email" placeholder="Tu Email" class="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300" required>
+                        </div>
+                        <div>
+                            <input type="text" id="form-subject" name="subject" placeholder="Asunto" class="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300" required>
+                        </div>
+                        <div>
+                            <textarea id="form-message" name="message" rows="5" placeholder="Tu Mensaje" class="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 resize-none" required></textarea>
+                        </div>
+                        <button type="submit" id="submit-button" class="w-full bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                            <i class="fas fa-paper-plane mr-2"></i>Enviar Mensaje
+                        </button>
+                    </form>
+                    <div id="form-status" class="mt-4 text-sm"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pie de Página -->
+    <footer style="background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));" class="text-white py-8 text-center backdrop-blur-md">
+        <div class="container mx-auto px-4">
+            <p>&copy; <span id="currentYear"></span> Rodrigo Porres. Todos los derechos reservados.</p>
+            <div class="mt-4 flex justify-center items-center space-x-6">
+                <a href="https://www.linkedin.com/in/rodrigo-porres-946b171ba" target="_blank" rel="noopener noreferrer" class="text-white opacity-80 hover:opacity-100 transition-all duration-300 transform hover:scale-110">
+                    <span class="sr-only">LinkedIn</span>
+                    <i class="fab fa-linkedin fa-lg"></i>
+                </a>
+                <a href="https://github.com/Porres1" target="_blank" rel="noopener noreferrer" class="text-white opacity-80 hover:opacity-100 transition-all duration-300 transform hover:scale-110">
+                    <span class="sr-only">GitHub</span>
+                    <i class="fab fa-github fa-lg"></i>
+                </a>
+                <a href="https://wa.me/message/TKYUXNEMAKK4A1" target="_blank" rel="noopener noreferrer" class="text-white opacity-80 hover:opacity-100 transition-all duration-300 transform hover:scale-110">
+                    <span class="sr-only">WhatsApp</span>
+                    <i class="fab fa-whatsapp fa-lg"></i>
+                </a>
+                <a href="mailto:rodrigoporres@protonmail.com" class="text-white opacity-80 hover:opacity-100 transition-all duration-300 transform hover:scale-110">
+                    <span class="sr-only">Email</span>
+                    <i class="fas fa-envelope fa-lg"></i>
+                </a>
+            </div>
+            <p class="text-sm mt-4 opacity-80">Diseñado por Rodrigo Porres</p>
+        </div>
+    </footer>
+
+    <!-- Botón de WhatsApp Flotante -->
+    <a href="https://wa.me/message/TKYUXNEMAKK4A1" target="_blank" class="fixed bottom-5 right-5 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition duration-300 z-40">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const contactForm = document.getElementById('contact-form');
+            const formStatus = document.getElementById('form-status');
+            const submitButton = document.getElementById('submit-button');
+
+            if (contactForm) {
+                contactForm.addEventListener('submit', async function (event) {
+                    event.preventDefault();
+                    submitButton.disabled = true;
+                    submitButton.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Enviando...';
+                    formStatus.textContent = '';
+                    formStatus.className = 'mt-4 text-sm'; // Reset class
+
+                    const formData = {
+                        name: document.getElementById('form-name').value,
+                        email: document.getElementById('form-email').value,
+                        subject: document.getElementById('form-subject').value, // Aunque no lo usemos en el mensaje de Telegram, es bueno tenerlo
+                        message: document.getElementById('form-message').value
+                    };
+
+                    try {
+                        const response = await fetch('/.netlify/functions/send-telegram', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify(formData)
+                        });
+
+                        const result = await response.json();
+
+                        if (response.ok) {
+                            formStatus.textContent = '¡Mensaje enviado con éxito!';
+                            formStatus.classList.add('text-green-600', 'font-semibold');
+                            contactForm.reset();
+                        } else {
+                            formStatus.textContent = `Error: ${result.message || 'No se pudo enviar el mensaje.'}`;
+                            formStatus.classList.add('text-red-600', 'font-semibold');
+                        }
+                    } catch (error) {
+                        console.error('Error al enviar el formulario:', error);
+                        formStatus.textContent = 'Error al enviar el formulario. Intenta de nuevo más tarde.';
+                        formStatus.classList.add('text-red-600', 'font-semibold');
+                    }
+                    finally {
+                        submitButton.disabled = false;
+                        submitButton.innerHTML = '<i class="fas fa-paper-plane mr-2"></i>Enviar Mensaje';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

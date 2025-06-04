@@ -1,0 +1,749 @@
+/* Importar fuentes de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Variables CSS para la paleta de colores del logo */
+:root {
+    --fondo-principal: #0B0F1C;
+    --acento-frio: #00AEEF;
+    --acento-calido: #FF4500;
+    --texto-principal: #F2F2F2;
+    --texto-secundario: #B0B0B0;
+    --separacion-bordes: #1E2230;
+    --acento-suave: #FFC107;
+
+    /* Variables anteriores adaptadas o mantenidas por compatibilidad */
+    --primary-blue: var(--acento-frio);      
+    --secondary-blue: #0077b3; /* Un azul más oscuro derivado del acento frío */
+    --accent-blue: var(--acento-frio);       
+    --light-blue: var(--separacion-bordes); /* Usar separación para fondos claros sobre oscuro */
+    --dark-gray: var(--texto-principal); /* El texto oscuro ahora es claro */
+    --medium-gray: var(--texto-secundario);      
+    --light-gray: var(--fondo-principal); /* El fondo claro ahora es el principal oscuro */       
+    --white: #FFFFFF; /* Blanco puro se mantiene */            
+    --gradient-start: var(--acento-frio);    
+    --gradient-end: #005f8c; /* Un tono más oscuro del acento frío para gradientes */
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    /* Mejoras para móviles */
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--fondo-principal);
+    color: var(--texto-principal);
+    padding-top: 64px;
+    scroll-snap-type: y mandatory;
+    line-height: 1.6;
+    /* Mejoras para móviles */
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+    touch-action: pan-y;
+}
+
+section {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+}
+
+/* Estilo para la barra de navegación */
+.nav-scrolled {
+    background-color: var(--white);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Mejoras para la navegación */
+nav {
+    background-color: rgba(11, 15, 28, 0.8); /* Fondo principal con transparencia */
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--separacion-bordes);
+}
+
+.nav-scrolled {
+    background-color: var(--fondo-principal);
+    box-shadow: 0 4px 6px -1px rgba(0, 174, 239, 0.1), 0 2px 4px -1px rgba(0, 174, 239, 0.06);
+}
+
+nav a {
+    transition: all 0.3s ease;
+    position: relative;
+    color: var(--texto-principal) !important; /* Asegurar que el texto sea el principal (blanco) */
+}
+
+nav a:hover {
+    color: var(--acento-frio) !important;
+    transform: translateY(-1px);
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--acento-frio);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Estilos para la línea de tiempo */
+.timeline {
+    position: relative;
+    padding: 40px 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--acento-frio), var(--acento-calido)); /* Usando acento frío y cálido */
+    transform: translateX(-50%);
+    border-radius: 2px;
+    box-shadow: 0 0 10px rgba(0, 174, 239, 0.3); /* Sombra con acento frío */
+}
+
+.timeline-event-container {
+    position: relative;
+    transition: all 0.4s ease;
+    margin-bottom: 2rem;
+}
+
+.timeline-event-container:hover {
+    transform: translateY(-5px);
+}
+
+.timeline-details {
+    background-color: var(--separacion-bordes);
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 15px;
+    box-shadow: 0 8px 25px rgba(0, 174, 239, 0.1); /* Sombra con acento frío */
+    border: 1px solid var(--acento-frio);
+    /* backdrop-filter: blur(10px); Podría eliminarse si el fondo es sólido */
+    color: var(--texto-principal);
+}
+
+.timeline-details h3 {
+    color: var(--acento-frio);
+}
+
+.timeline-details p, .timeline-details span {
+    color: var(--texto-secundario);
+}
+
+.timeline-details:hover {
+    box-shadow: 0 12px 35px rgba(0, 174, 239, 0.2);
+    border-color: var(--acento-calido);
+}
+
+/* Responsive adjustments for timeline */
+@media (max-width: 768px) {
+    .timeline::before {
+        left: 20px;
+        transform: translateX(0);
+    }
+
+    .left-timeline {
+        flex-direction: row !important;
+    }
+
+    .left-timeline .timeline-event-container {
+        margin-left: 60px !important;
+        width: calc(100% - 60px) !important;
+        text-align: left !important;
+    }
+
+    .left-timeline .timeline-event-container .timeline-details {
+        margin-left: 0 !important;
+    }
+
+    .right-timeline {
+        flex-direction: row !important;
+    }
+
+    .right-timeline .timeline-event-container {
+        margin-left: 60px !important;
+        width: calc(100% - 60px) !important;
+        text-align: left !important;
+    }
+
+    .right-timeline .timeline-event-container .timeline-details {
+        margin-left: 0 !important;
+    }
+
+    .z-20 {
+        margin-left: 20px;
+    }
+}
+
+/* Mejoras adicionales para móviles */
+@media (max-width: 640px) {
+    body {
+        padding-top: 56px; /* Reducir padding superior en móviles pequeños */
+    }
+    
+    .portfolio-item {
+        margin-bottom: 1rem;
+    }
+    
+    .portfolio-item img {
+        height: 150px; /* Altura más pequeña en móviles */
+    }
+    
+    .swiper-slide {
+        width: 280px;
+        height: 200px;
+    }
+    
+    /* Mejorar el área táctil de botones */
+    .btn-primary, .btn-outline {
+        min-height: 44px;
+        padding: 12px 24px;
+    }
+    
+    /* Espaciado mejorado para elementos interactivos */
+    nav a {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    .portfolio-item img {
+        height: 120px;
+    }
+    
+    .swiper-slide {
+        width: 250px;
+        height: 180px;
+    }
+    
+    /* Texto más legible en pantallas muy pequeñas */
+    .text-sm {
+        font-size: 0.9rem;
+    }
+    
+    .text-base {
+        font-size: 1rem;
+    }
+}
+
+/* Estilos para el carrusel de Swiper (Certificados) */
+.swiper-container {
+    width: 100%;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    overflow: hidden;
+}
+
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 320px;
+    height: 240px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s ease;
+}
+
+.swiper-slide img {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 174, 239, 0.15); /* Sombra con acento frío */
+    transition: all 0.4s ease;
+    border: 2px solid var(--separacion-bordes);
+}
+
+.swiper-slide:hover img {
+    transform: scale(1.05);
+    box-shadow: 0 12px 35px rgba(0, 174, 239, 0.25);
+    border-color: var(--acento-frio);
+}
+
+/* Ajustes para el efecto coverflow */
+.swiper-container-coverflow .swiper-slide-shadow-left,
+.swiper-container-coverflow .swiper-slide-shadow-right {
+    background-image: none;
+}
+
+/* Botones de navegación de Swiper */
+.swiper-button-next, .swiper-button-prev {
+    color: var(--primary-blue);
+    background: var(--white);
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.2);
+    transition: all 0.3s ease;
+}
+
+.swiper-button-next:hover, .swiper-button-prev:hover {
+    background: var(--primary-blue);
+    color: var(--white);
+    transform: scale(1.1);
+}
+
+/* Paginación de Swiper */
+.swiper-pagination-bullet {
+    background: var(--medium-gray);
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+    background: var(--primary-blue);
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+/* Estilos para la sección de Portafolio */
+.portfolio-item {
+    aspect-ratio: 1 / 1;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    background: var(--white);
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.15);
+    transition: all 0.4s ease;
+    border: 2px solid transparent;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(37, 99, 235, 0.25);
+    border-color: var(--accent-blue);
+}
+
+.portfolio-item img {
+    transition: all 0.4s ease;
+    width: 100%;
+    height: 200px; /* Or your desired fixed height */
+    object-fit: contain; /* Changed from cover to contain */
+    object-position: center;
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.1);
+    filter: brightness(0.7);
+}
+
+.portfolio-item .absolute {
+    transition: all 0.4s ease;
+    background: linear-gradient(135deg, var(--primary-blue), var(--accent-blue));
+    opacity: 0;
+}
+
+.portfolio-item:hover .absolute {
+    opacity: 1;
+}
+
+/* Estilos para botones */
+.btn-primary {
+    background-color: var(--acento-frio);
+    color: var(--fondo-principal); /* Texto oscuro sobre fondo claro de botón */
+    border: none;
+    border-radius: 50px;
+    padding: 12px 32px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 174, 239, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary:hover {
+    background-color: var(--acento-calido);
+    color: var(--texto-principal); /* Texto claro sobre fondo cálido */
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 69, 0, 0.4);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--acento-frio);
+    border: 2px solid var(--acento-frio);
+    border-radius: 50px;
+    padding: 10px 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-outline:hover {
+    background: var(--acento-frio);
+    color: var(--fondo-principal);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 174, 239, 0.3);
+}
+
+.btn-outline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn-outline:hover::before {
+    left: 100%;
+}
+
+/* Estilos para el menú móvil */
+.mobile-menu-open {
+    overflow: hidden;
+}
+
+#mobile-menu {
+    background: rgba(11, 15, 28, 0.95); /* Fondo principal con alta transparencia */
+    backdrop-filter: blur(10px);
+    border-top: 1px solid var(--separacion-bordes);
+}
+
+#mobile-menu a {
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    margin: 4px 0;
+    color: var(--texto-principal) !important;
+    padding: 10px 15px;
+}
+
+#mobile-menu a:hover {
+    background: rgba(0, 174, 239, 0.1); /* Acento frío con transparencia */
+    transform: translateX(8px);
+    color: var(--acento-frio) !important;
+}
+
+/* Estilos para el fondo de partículas */
+#particles-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+/* Estilos adicionales para mejorar la experiencia */
+.section-title {
+    color: #000000; /* Color negro para los títulos de sección */
+    font-weight: 700;
+    margin-bottom: 2rem;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--acento-frio), var(--acento-calido));
+    border-radius: 2px;
+}
+
+/* Animaciones suaves para elementos */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Mejoras para formularios (Contacto) */
+input, textarea {
+    background-color: var(--separacion-bordes);
+    color: var(--texto-principal);
+    border: 1px solid var(--acento-suave);
+    border-radius: 8px;
+    padding: 12px 16px;
+    transition: all 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    border-color: var(--acento-frio);
+    box-shadow: 0 0 0 3px rgba(0, 174, 239, 0.2); /* Sombra con acento frío */
+    outline: none;
+}
+
+/* Estilo para el botón de envío del formulario, asumiendo que usa .btn-primary */
+form button[type="submit"] {
+    /* Los estilos de .btn-primary ya deberían aplicarse. */
+    /* Si se necesita un estilo específico, se puede añadir aquí. */
+}
+
+/* Estilos para tarjetas (Habilidades y genéricas) */
+.card, .skill-card {
+    background-color: var(--separacion-bordes);
+    color: var(--texto-principal);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 8px 25px rgba(0, 174, 239, 0.1); /* Sombra con acento frío */
+    border: 1px solid var(--acento-suave); /* Borde sutil con acento suave */
+    transition: all 0.3s ease;
+}
+
+.card:hover, .skill-card:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 12px 35px rgba(0, 174, 239, 0.2); /* Sombra más pronunciada con acento frío */
+    border-color: var(--acento-frio);
+}
+
+/* Estilo específico para skill-card si es necesario diferenciar más adelante */
+.skill-card {
+    /* Podrían ir estilos adicionales aquí si se necesita */
+}
+
+/* Floating animations */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes floatSlow {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-15px) rotate(2deg);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes sparkle {
+    0%, 100% {
+        opacity: 0.3;
+        transform: scale(0.8);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+/* Floating elements */
+.floating {
+    animation: float 3s ease-in-out infinite;
+}
+
+.floating-slow {
+    animation: floatSlow 4s ease-in-out infinite;
+}
+
+.pulsing {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+/* Interactive Sparks System */
+.spark {
+    position: fixed;
+    width: 4px;
+    height: 4px;
+    background: radial-gradient(circle, var(--acento-frio) 0%, var(--acento-suave) 100%); /* Azul neón a ámbar */
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    animation: sparkAnimation 0.8s ease-out forwards;
+    /* Prevenir interferencia con scroll en móviles */
+    touch-action: none;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.spark::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: 8px;
+    height: 8px;
+    background: radial-gradient(circle, var(--acento-frio, 0.4) 0%, transparent 70%); /* Azul neón con opacidad */
+    border-radius: 50%;
+    animation: sparkGlow 0.8s ease-out forwards;
+}
+
+@keyframes sparkAnimation {
+    0% {
+        transform: scale(0) rotate(0deg);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.2) rotate(180deg);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(0) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes sparkGlow {
+    0% {
+        transform: scale(0);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1.5);
+        opacity: 0.4;
+    }
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+/* Floating particles */
+.floating-particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.particle {
+    position: absolute;
+    background: var(--acento-suave); /* Usar acento suave (ámbar) para partículas */
+    border-radius: 50%;
+    opacity: 0.3; /* Ligeramente más visible */
+    animation: sparkle 4s ease-in-out infinite;
+}
+
+.particle:nth-child(1) {
+    width: 4px;
+    height: 4px;
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.particle:nth-child(2) {
+    width: 6px;
+    height: 6px;
+    top: 60%;
+    left: 80%;
+    animation-delay: 1s;
+}
+
+.particle:nth-child(3) {
+    width: 3px;
+    height: 3px;
+    top: 40%;
+    left: 30%;
+    animation-delay: 2s;
+}
+
+.particle:nth-child(4) {
+    width: 5px;
+    height: 5px;
+    top: 80%;
+    left: 60%;
+    animation-delay: 3s;
+}
+
+.particle:nth-child(5) {
+    width: 4px;
+    height: 4px;
+    top: 10%;
+    left: 70%;
+    animation-delay: 1.5s;
+}
+
+/* Enhanced hover effects for cards are now part of the .card definition */
+
+/* Footer styles */
+footer {
+    background-color: var(--separacion-bordes);
+    color: var(--texto-secundario);
+    padding: 2rem 0;
+    text-align: center;
+    border-top: 1px solid var(--acento-suave);
+}
+
+footer p {
+    margin-bottom: 0.5rem;
+}
+
+footer a {
+    color: var(--acento-frio);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--acento-calido);
+    text-decoration: underline;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-5px) scale(1.03);
+}
+
+/* Breathing effect for icons */
+.service-icon {
+    animation: pulse 3s ease-in-out infinite;
+}
+
+/* Subtle background animation */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(120, 119, 198, 0.02) 0%, transparent 50%);
+    animation: floatSlow 8s ease-in-out infinite;
+    pointer-events: none;
+    z-index: -1;
+}

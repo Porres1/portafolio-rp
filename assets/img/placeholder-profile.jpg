@@ -1,0 +1,18 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="256" height="256" fill="#E0E0E0"/>
+<circle cx="128" cy="128" r="80" fill="#BDBDBD"/>
+<path d="M128 178C157.765 178 182 153.765 182 124C182 94.235 157.765 70 128 70C98.235 70 74 94.235 74 124C74 153.765 98.235 178 128 178Z" fill="#9E9E9E"/>
+<path d="M128 208C106.909 208 90 191.091 90 170C90 160.684 93.7083 152.094 100 146C100.958 145.101 101.993 144.278 103.095 143.538C109.091 139.538 118.091 138 128 138C137.909 138 146.909 139.538 152.905 143.538C154.007 144.278 155.042 145.101 156 146C162.292 152.094 166 160.684 166 170C166 191.091 149.091 208 128 208Z" fill="#757575"/>
+<foreignObject x="90" y="90" width="76" height="76">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+        <style>
+            .emoji {
+                font-size: 60px;
+                line-height: 76px;
+                text-align: center;
+            }
+        </style>
+        <div class="emoji">👤</div>
+    </div>
+</foreignObject>
+</svg>
